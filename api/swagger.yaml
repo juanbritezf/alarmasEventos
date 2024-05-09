@@ -1,0 +1,55 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "ORDS generated API for alarmasEventos"
+host: "sistemas.alarmas.com.py"
+basePath: "/ords/walrusws/alarmasEventos"
+schemes:
+- "https"
+produces:
+- "application/json"
+paths:
+  /getListClien:
+    post:
+      description: "Create a new record on alarmasEventos"
+      consumes:
+      - "application/json"
+      parameters: []
+      responses:
+        "201":
+          description: "The successfully created record."
+          schema:
+            type: "object"
+  /sendRespClien:
+    post:
+      description: "Create a new record on alarmasEventos"
+      parameters:
+      - in: "body"
+        name: "payload"
+        required: true
+        schema:
+          $ref: "#/definitions/alarmasEventos_ITEM"
+        x-exportParamName: "Payload"
+      responses:
+        "201":
+          description: "The successfully created record."
+          schema:
+            type: "object"
+definitions:
+  STRING:
+    type: "string"
+  alarmasEventos_ITEM:
+    properties:
+      v_enve_codi:
+        type: "string"
+      v_even_estado:
+        type: "string"
+      v_even_esta_nuevo:
+        type: "string"
+      v_obse:
+        type: "string"
+      v_fech:
+        type: "string"
+      v_clpr_codi:
+        type: "string"
